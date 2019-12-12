@@ -1,0 +1,83 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "no-console": "warn",
+        "indent": [
+            "warn",
+            2
+        ],
+        "linebreak-style": [
+            "warn",
+            "unix"
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "react/jsx-uses-vars": 2,
+        "react/jsx-uses-react": 2,
+        "react/jsx-no-duplicate-props": 2,
+        "react/jsx-no-undef": 2,
+        "react/no-multi-comp": 2,
+        "react/jsx-indent-props": [
+            "error",
+            2
+        ],
+        "react/jsx-pascal-case": 2,
+        "react/prop-types": 2,
+        "react/jsx-indent": [
+            "error",
+            2
+        ],
+        "react/jsx-key": 2,
+        "react/no-direct-mutation-state": 2,
+        "react/prefer-stateless-function": 2,
+        "react/no-unused-state": 2,
+        "react/require-render-return": 2,
+        "react/jsx-handler-names": 2
+    },
+    "settings": {
+        "react": {
+          "createClass": "createReactClass", // Regex for Component Factory to use,
+                                             // default to "createReactClass"
+          "pragma": "React",  // Pragma to use, default to "React"
+          "version": "detect", // React version. "detect" automatically picks the version you have installed.
+                               // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+                               // default to latest and warns if missing
+                               // It will default to "detect" in the future
+          "flowVersion": "0.53" // Flow version
+        },
+        "propWrapperFunctions": [
+            // The names of any function used to wrap propTypes, e.g. `forbidExtraProps`. If this isn't set, any propTypes wrapped in a function will be skipped.
+            "forbidExtraProps",
+            {"property": "freeze", "object": "Object"},
+            {"property": "myFavoriteWrapper"}
+        ],
+        "linkComponents": [
+          // Components used as alternatives to <a> for linking, eg. <Link to={ url } />
+          "Hyperlink",
+          {"name": "Link", "linkAttribute": "to"}
+        ]
+    }
+}
