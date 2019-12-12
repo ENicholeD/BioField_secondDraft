@@ -12,6 +12,7 @@ import BackendHelper from '../BackendHelper.js';
 
 class App extends React.Component{
     constructor (props) {
+        super(props);
         this.state = {
             currentUser: 0,
             currentJournal: null,
@@ -124,7 +125,7 @@ class App extends React.Component{
                         onAddingNewEntry={this.handleAddingNewEntry}
                         onDeletingJournal={this.handleDeletingJournal} />} />
 
-                        <Route path='/login' render={() => <LoginPage
+                        <Route path='/sign-in' render={() => <LoginPage
                         onLogin={this.handleLogin} />} />
                         <Route path='/create-account' render={() => <CreateAcctPage
                         onCreateAcct={this.handleCreateAcct} />} />

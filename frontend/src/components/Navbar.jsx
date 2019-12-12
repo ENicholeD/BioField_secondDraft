@@ -10,11 +10,11 @@ function Navbar(props) {
     props.onLogout();
   }
 
-  let signInOut = <Link to='/login'>Sign In</Link>;
+  let signInOut = <Link to='/sign-in'>Sign In</Link>;
 
   if (props.currentUser)
   {
-    signInOut = <Link onClick={clickLogout} to='/login'>Sign Out</Link>;
+    signInOut = <Link onClick={clickLogout} to='/sign-in'>Sign Out</Link>;
   }
 
   var navStyle = {
@@ -30,7 +30,7 @@ function Navbar(props) {
   return (
     <nav style={navStyle}>
       <div className='nav-wrapper'>
-        <Link to='/' className='brand-logo' style={marginLeftStyle}><i className='material-icons'>home</i>My Journals</Link>
+        <Link to='/' className='brand-logo' style={marginLeftStyle}>BioField</Link>
         <ul id='nav-mobile' className='right hide-on-small-and-down'>
           <li><Link to='/create'>New Journal</Link></li>
           <li style={marginRightStyle}>{signInOut}</li>

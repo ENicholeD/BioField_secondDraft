@@ -7,12 +7,14 @@ function Entry(props) {
   let written = moment(props.dateTimeString).calendar();
 
   return(
+    <div>
     <p>{props.site} <em>(Site: {written})</em></p>
     <p>Temperature: {props.temperature}°C</p>
     <p>Weather Condition: {props.weather}</p>
     <p>Wind Condition: {props.wind}</p>
     <p>Soil/Water Condition: {props.soil}</p>
     <p>Observation: {props.observation}</p>
+    </div>
   );
 }
 
