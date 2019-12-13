@@ -16,7 +16,7 @@ function Entry(props) {
     <p>Observation: {props.observation}</p>
     </div>
   );
-}
+} 
 
 Entry.propTypes = {
   site: PropTypes.string,
