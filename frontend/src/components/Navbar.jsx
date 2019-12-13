@@ -1,7 +1,6 @@
   
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'materialize-css/dist/css/materialize.min.css';
 import PropTypes from 'prop-types';
 
 function Navbar(props) {
@@ -18,24 +17,28 @@ function Navbar(props) {
   }
 
   var navStyle = {
-    backgroundColor: '#0f2c3e',
+    backgroundColor: '#747d5e',
+    backgroundImage: "url(" + "https://www.transparenttextures.com/patterns/tree-bark.png" + ")",
+    padding: '50px'
   };
   var marginLeftStyle = {
-    marginLeft: '25px'
+    marginLeft: '25px',
+    float: 'left',
+    color: 'darkgreen'
   };
-  var marginRightStyle = {
-    marginRight: '20px'
-  };
-
+  var floatingRight = {
+    textAlign: 'right'
+  }
   return (
     <nav style={navStyle}>
       <div className='nav-wrapper'>
-        <Link to='/' className='brand-logo' style={marginLeftStyle}>BioField</Link>
-        <ul id='nav-mobile' className='right hide-on-small-and-down'>
-          <li><Link to='/create'>New Journal</Link></li>
-          <li style={marginRightStyle}>{signInOut}</li>
-          <li><Link to='/create-account'>Create Account</Link></li>
-
+        <h1><Link to='/' className='brand-logo' style={marginLeftStyle}>BioField</Link></h1> 
+        <ul id='nav-mobile'>
+          <div style={floatingRight}>
+          <p><Link to='/create-account'>Create Account</Link></p>
+          <p>{signInOut}</p>
+          <p><Link to='/create'>New Journal</Link></p>
+          </div>
         </ul>
       </div>
     </nav>  

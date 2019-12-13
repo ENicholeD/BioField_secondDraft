@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'materialize-css/dist/css/materialize.min.css';
 import { Link } from 'react-router-dom';
 
 function Journal(props) {

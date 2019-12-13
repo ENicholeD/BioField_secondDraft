@@ -1,5 +1,4 @@
 import React from 'react';
-import 'materialize-css/dist/css/materialize.min.css';
 import PropTypes from 'prop-types';
 
 function LoginPage(props) {
