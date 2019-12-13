@@ -105,12 +105,12 @@ class App extends React.Component{
         console.log('APP STATE: ', this.state);
         return (
             <div>
-                <div className="container">
-                    <Switch>
                         <Navbar
                         onLogout={this.handleLogout}
                         currentUser={this.state.currentUser} />
 
+                            <div className="container">
+                        <Switch>
                         <Route exact path='/' render={() => <JournalList
                         journalList={this.state.masterJournalList}
                         onSettingCurrentJournal={this.handleSettingCurrentJournal}/>}/>
@@ -119,16 +119,16 @@ class App extends React.Component{
                         onNewJournalCreation={this.handleAddingNewJournal}
                         currentUser={this.state.currentUser} />} />
 
-                        <Route path='/info' render={() => <JournalDetails
+                        <Route path='/info' render={() => <JournalInfo
                         currentJournal={this.state.currentJournal}
                         journalList={this.state.masterJournalList}
                         onAddingNewEntry={this.handleAddingNewEntry}
                         onDeletingJournal={this.handleDeletingJournal} />} />
 
-                        <Route path='/sign-in' render={() => <LoginPage
-                        onLogin={this.handleLogin} />} />
                         <Route path='/create-account' render={() => <CreateAcctPage
                         onCreateAcct={this.handleCreateAcct} />} />
+                        <Route path='/sign-in' render={() => <LoginPage
+                        onLogin={this.handleLogin} />} />
                     </Switch>
                 </div>
             </div>

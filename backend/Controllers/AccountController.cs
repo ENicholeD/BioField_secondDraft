@@ -13,7 +13,6 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace BioField.Controllers
 {
-    [Route("/users")]
     public class AccountController : Controller
     {
         private readonly BioFieldContext _db;
@@ -26,7 +25,6 @@ namespace BioField.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("/authenticate")]
         public IActionResult Authenticate([FromBody] ApplicationUser userLoggingIn)
         {
             var user = _userService.Authenticate(userLoggingIn.Username, userLoggingIn.Password);
@@ -36,7 +34,6 @@ namespace BioField.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("/create")]
         public void Create([FromBody] ApplicationUser newUser)
         {
             //only save hashed password in database

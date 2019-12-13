@@ -35,9 +35,9 @@ function Navbar(props) {
         <h1><Link to='/' className='brand-logo' style={marginLeftStyle}>BioField</Link></h1> 
         <ul id='nav-mobile'>
           <div style={floatingRight}>
-          <p><Link to='/create-account'>Create Account</Link></p>
-          <p>{signInOut}</p>
-          <p><Link to='/create'>New Journal</Link></p>
+            <p><Link to='/create-account'>Create Account</Link></p>
+          <p><Link to ='sign-in'>Sign in</Link></p>
+            <p><Link to='/create'>New Journal</Link></p>
           </div>
         </ul>
       </div>
