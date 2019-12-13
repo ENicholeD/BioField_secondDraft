@@ -19,7 +19,7 @@ function Navbar(props) {
   var navStyle = {
     backgroundColor: '#747d5e',
     backgroundImage: "url(" + "https://www.transparenttextures.com/patterns/tree-bark.png" + ")",
-    padding: '50px'
+    padding: '20px'
   };
   var marginLeftStyle = {
     marginLeft: '25px',
