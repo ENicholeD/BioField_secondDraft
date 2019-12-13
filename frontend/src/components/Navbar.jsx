@@ -19,12 +19,15 @@ function Navbar(props) {
   var navStyle = {
     backgroundColor: '#747d5e',
     backgroundImage: "url(" + "https://www.transparenttextures.com/patterns/tree-bark.png" + ")",
-    padding: '20px'
+    padding: '20px',
+    marginLeft: '5%',
+    marginRight: '5%',
   };
   var marginLeftStyle = {
     marginLeft: '25px',
     float: 'left',
-    color: 'darkgreen'
+    color: 'darkgreen',
+    fontFamily: 'Homemade Apple, cursive'
   };
   var floatingRight = {
     textAlign: 'right'

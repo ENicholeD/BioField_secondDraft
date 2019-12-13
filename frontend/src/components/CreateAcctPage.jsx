@@ -18,26 +18,21 @@ function CreateAcctPage(props) {
     marginTop: '20px'
   };
   var btnStyle = {
-    backgroundColor: '#0f2c3e',
+    backgroundColor: '#747d5e',
+    padding: '10px'
   };
 
   return (
     <div>
       <form onSubmit={handleCreateAcct}>
-        <style jsx>{`
-            .input-field input:focus {
-              border-bottom: 1px solid #0f2c3e;
-              box-shadow: 0 1px 0 0 #0f2c3e;
-            }
-        `}</style>
-        <div className='input-field'>
+        <div style={btnParent}>
           <input
             type='text'
             placeholder='User ID'
             ref={(input) => { _username = input; }}
           />
         </div>
-        <div className='input-field'>
+        <div style={btnParent}>
           <input
             type='password'
             placeholder='Password'
@@ -45,7 +40,7 @@ function CreateAcctPage(props) {
           />
         </div>
         <div style={btnParent}>
-          <button type='submit' style={btnStyle} className='waves-effect waves-light btn-large'><i className='material-icons right'>add</i>Create Account</button>
+          <button type='submit' style={btnStyle}>Create Account</button>
         </div>
       </form>
     </div>
