@@ -27,5 +27,5 @@ Entry.propTypes = {
   observation: PropTypes.string,
   dateTimeString: PropTypes.object
 };
-
+ 
 export default Entry;
