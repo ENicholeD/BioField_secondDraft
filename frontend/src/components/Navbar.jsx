@@ -20,21 +20,25 @@ function Navbar(props) {
   var navStyle = {
     backgroundColor: '#747d5e',
     backgroundImage: "url(" + "https://www.transparenttextures.com/patterns/tree-bark.png" + ")",
-    padding:'20px';
-    marginLeft: '5%',
-    marginRight: '5%',
+    padding:'20px',
+    marginLeft: '1%',
+    marginRight: '1%',
+    borderRadius: '10px'
   };
   var marginLeftStyle = {
     marginLeft: '25px',
     float: 'left',
-    color: 'darkgreen',
+    color: 'black',
     fontFamily: 'Homemade Apple, cursive',
     fontSize: '50px',
-    paddingTop: '20px'
+    paddingTop: '20px',
+    textDecoration: 'none'
   };
   var floatingRight = {
     textAlign: 'right',
-    padding: '35px'
+    padding: '35px',
+    textDecoration: 'none',
+    color: 'black'
   };
   var logostyle = {
     float: 'left'
@@ -46,7 +50,7 @@ function Navbar(props) {
         <h1><Link to='/' className='brand-logo' style={marginLeftStyle}>BioField</Link></h1> 
         <ul id='nav-mobile'>
           <div style={floatingRight}>
-            <p><Link to='sign-in'>Sign in</Link> <Link to='/create-account'>Create Account</Link> <Link to='/create'>New Journal</Link></p>
+            <p><Link style={floatingRight} to='sign-in'>Sign in</Link> <Link style={floatingRight} to='/create-account'>Create Account</Link> <Link style={floatingRight} to='/create'>New Journal</Link></p>
           </div>
         </ul>
       </div>

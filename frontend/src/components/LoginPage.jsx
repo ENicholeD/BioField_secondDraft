@@ -18,7 +18,8 @@ function LoginPage(props) {
     marginTop: '20px'
   };
   var loginBtnStyle = {
-    backgroundColor: '#0f2c3e',
+    backgroundColor: '#747d5e',
+    padding: '10px'
   };
 
   return (
@@ -30,14 +31,14 @@ function LoginPage(props) {
               box-shadow: 0 1px 0 0 #0f2c3e;
             }
         `}</style>
-        <div className='input-field'>
+        <div style={loginBtnParent} className='input-field'>
           <input
             type='text'
             placeholder='User ID'
             ref={(input) => { _username = input; }}
           />
         </div>
-        <div className='input-field'>
+        <div style={loginBtnParent} className='input-field'>
           <input
             type='password'
             placeholder='Password'
@@ -45,7 +46,7 @@ function LoginPage(props) {
           />
         </div>
         <div style={loginBtnParent}>
-          <button type='submit' style={loginBtnStyle} className='waves-effect waves-light btn-large'><i className='material-icons right'>chevron_right</i>Log in</button>
+          <button type='submit' style={loginBtnStyle} className='waves-effect waves-light btn-large'>Log in</button>
         </div>
       </form>
     </div>

@@ -26,7 +26,8 @@ class NewJournalForm extends React.Component {
             marginTop: '20px'
         };
         var btnStyle = {
-            backgroundColor: '#0f2c3e',
+            backgroundColor: '#747d5e',
+            padding: '10px'
         };
         return (
             <div>
@@ -39,14 +40,14 @@ class NewJournalForm extends React.Component {
                             box-shadow: 0 1px 0 0 #0f2c3e;
                          }
                     `}</style>
-                    <div className='input-field'>
+                    <div style={btnParent} className='input-field'>
                         <input id='name'
                             type='text'
                             placeholder='Journal Name'
                             ref={(input) => { this._name = input; }} />
                     </div>
                     <div style={btnParent}>
-                        <button type='submit' style={btnStyle} className="waves-light btn-large"><i className='material-icons right'>add</i>Add Journal</button>
+                        <button type='submit' style={btnStyle} className="waves-light btn-large">Add Journal</button>
                     </div>
                 </form>
             </div>
