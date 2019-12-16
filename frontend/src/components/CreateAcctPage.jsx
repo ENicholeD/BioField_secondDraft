@@ -6,9 +6,9 @@ function CreateAcctPage(props) {
   let _username = null;
   let _password = null;
 
-  function handleCreateAcct(event){
+  function handleCreateAcct(event) {
     event.preventDefault();
-    props.onCreateAcct({Username: _username.value, Password: _password.value});
+    props.onCreateAcct({ Username: _username.value, Password: _password.value });
     _username = '';
     _password = '';
   }

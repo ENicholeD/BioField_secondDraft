@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import Entry from './Entry';
 
 function EntryList(props) {
-  return(
+  return (
     <div>
       {props.entryList.map((thisEntry, index) =>
-        <Entry 
+        <Entry
           site={thisEntry.site}
-          key={index} 
-          dateTimeString={thisEntry.dateTimeString}/>
+          key={index}
+          dateTimeString={thisEntry.dateTimeString} />
       )}
     </div>
   );

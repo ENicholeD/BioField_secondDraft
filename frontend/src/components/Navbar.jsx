@@ -1,4 +1,4 @@
-  
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -10,17 +10,16 @@ function Navbar(props) {
     props.onLogout();
   }
 
-  let signInOut = <Link to='/login'>Sign In</Link>;
+  let signInOut = <Link to='/sign-in'>Sign In</Link>;
 
-  if (props.currentUser)
-  {
+  if (props.currentUser) {
     signInOut = <Link onClick={clickLogout} to='/login'>Sign Out</Link>;
   }
 
   var navStyle = {
     backgroundColor: '#747d5e',
-    backgroundImage: "url(" + "https://www.transparenttextures.com/patterns/tree-bark.png" + ")",
-    padding:'20px',
+    backgroundImage: 'url(' + 'https://www.transparenttextures.com/patterns/tree-bark.png' + ')',
+    padding: '20px',
     marginLeft: '1%',
     marginRight: '1%',
     borderRadius: '10px'
@@ -42,19 +41,19 @@ function Navbar(props) {
   };
   var logostyle = {
     float: 'left'
-  }
+  };
   return (
     <nav style={navStyle}>
       <div className='nav-wrapper'>
-        <img src={logo} style={logostyle}/>
-        <h1><Link to='/' className='brand-logo' style={marginLeftStyle}>BioField</Link></h1> 
+        <img src={logo} style={logostyle} />
+        <h1><Link to='/' className='brand-logo' style={marginLeftStyle}>BioField</Link></h1>
         <ul id='nav-mobile'>
           <div style={floatingRight}>
-            <p><Link style={floatingRight} to='sign-in'>Sign in</Link> <Link style={floatingRight} to='/create-account'>Create Account</Link> <Link style={floatingRight} to='/create'>New Journal</Link></p>
+            <p>{signInOut} <Link style={floatingRight} to='/create-account'>Create Account</Link> <Link style={floatingRight} to='/create'>New Journal</Link></p>
           </div>
         </ul>
       </div>
-    </nav>  
+    </nav>
   );
 }
 

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
@@ -17,7 +18,6 @@ const render = (Component) => {
 
 render(App);
 
-/*eslint-disable */
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     render(App);

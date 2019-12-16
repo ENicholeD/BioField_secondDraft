@@ -10,8 +10,8 @@ import CreateAcctPage from './CreateAcctPage';
 import { cloneDeep } from 'lodash';
 import BackendHelper from '../BackendHelper.js';
 
-class App extends React.Component{
-    constructor (props) {
+class App extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             currentUser: 0,
@@ -34,14 +34,14 @@ class App extends React.Component{
         this.backendHelper.backendPostNewUser(newUser);
     }
 
-    handleLogin(user){
+    handleLogin(user) {
         let loginPromise = this.backendHelper.backendAttemptLogin(user);
-        loginPromise.then((respose) =>{
+        loginPromise.then((response) => {
             let parsedResponse = JSON.parse(response);
             console.log('JSON RESPONSE (handleLogin): ', parsedResponse);
-            this.setState({currentUser: parsedResponse.UserId});
-            this.setState({token: parsedResponse.token});
-        }).then(() => {this.getJournalList()});
+            this.setState({ currentUser: parsedResponse.UserId });
+            this.setState({ token: parsedResponse.token });
+        }).then(() => { this.getJournalList() });
     }
     getJournalList() {
         let dataPromise = this.apiHelper.backendGetUserJournals(this.state.token);
@@ -57,20 +57,20 @@ class App extends React.Component{
     handleAddingJournalToState(journal) {
         let journalId = v4();
         let newMasterJournalList = Object.assign({}, this.state.masterJournalList, {
-          [journalId]: journal
+            [journalId]: journal
         });
         this.setState({ masterJournalList: newMasterJournalList });
-      }
+    }
 
     handleAddingNewJournal(newJournal) {
         let addJournalPromise = this.backendHelper.backendPostNewJournal(newJournal, this.state.token);
         addJournalPromise.then((response) => {
-          newJournal.journalId = JSON.parse(response);
-          let newJournalId = v4();
-          let newMasterJournalList = Object.assign({}, this.state.masterJournalList, {
-            [newJournalId]: newJournal
-          });
-          this.setState({ masterJournalList: newMasterJournalList });
+            newJournal.journalId = JSON.parse(response);
+            let newJournalId = v4();
+            let newMasterJournalList = Object.assign({}, this.state.masterJournalList, {
+                [newJournalId]: newJournal
+            });
+            this.setState({ masterJournalList: newMasterJournalList });
         });
     }
 
@@ -78,9 +78,9 @@ class App extends React.Component{
         console.log('NEW ENTRY TO ADD: ', newEntry);
         let addEntryPromise = this.backendHelper.backendPostNewEntry(newEntry, this.state.token);
         addEntryPromise.then(() => {
-          const copyMasterJournalList = cloneDeep(this.state.masterJournalList); //use lodash to make a deep copy
-          copyMasterJournalList[this.state.currentJournal].entries.push(newEntry);
-          this.setState({ masterJournalList: copyMasterJournalList });
+            const copyMasterJournalList = cloneDeep(this.state.masterJournalList); //use lodash to make a deep copy
+            copyMasterJournalList[this.state.currentJournal].entries.push(newEntry);
+            this.setState({ masterJournalList: copyMasterJournalList });
         });
     }
 
@@ -101,34 +101,34 @@ class App extends React.Component{
         this.setState({ masterJournalList: {} });
         this.setState({ token: null });
     }
-    render (){
+    render() {
         console.log('APP STATE: ', this.state);
         return (
             <div>
-                        <Navbar
-                        onLogout={this.handleLogout}
-                        currentUser={this.state.currentUser} />
+                <Navbar
+                    onLogout={this.handleLogout}
+                    currentUser={this.state.currentUser} />
 
-                            <div className="container">
-                        <Switch>
+                <div className="container">
+                    <Switch>
                         <Route exact path='/' render={() => <JournalList
-                        journalList={this.state.masterJournalList}
-                        onSettingCurrentJournal={this.handleSettingCurrentJournal}/>}/>
+                            journalList={this.state.masterJournalList}
+                            onSettingCurrentJournal={this.handleSettingCurrentJournal} />} />
 
                         <Route path='/create' render={() => <NewJournalForm
-                        onNewJournalCreation={this.handleAddingNewJournal}
-                        currentUser={this.state.currentUser} />} />
+                            onNewJournalCreation={this.handleAddingNewJournal}
+                            currentUser={this.state.currentUser} />} />
 
                         <Route path='/info' render={() => <JournalInfo
-                        currentJournal={this.state.currentJournal}
-                        journalList={this.state.masterJournalList}
-                        onAddingNewEntry={this.handleAddingNewEntry}
-                        onDeletingJournal={this.handleDeletingJournal} />} />
+                            currentJournal={this.state.currentJournal}
+                            journalList={this.state.masterJournalList}
+                            onAddingNewEntry={this.handleAddingNewEntry}
+                            onDeletingJournal={this.handleDeletingJournal} />} />
 
                         <Route path='/create-account' render={() => <CreateAcctPage
-                        onCreateAcct={this.handleCreateAcct} />} />
+                            onCreateAcct={this.handleCreateAcct} />} />
                         <Route path='/sign-in' render={() => <LoginPage
-                        onLogin={this.handleLogin} />} />
+                            onLogin={this.handleLogin} />} />
                     </Switch>
                 </div>
             </div>

@@ -18,12 +18,11 @@ function JournalList(props) {
       <div>
         {Object.keys(props.journalList).map((journalId) => {
           var journal = props.journalList[journalId];
-          { console.log('JOURNAL =', journal); }
           return <Journal name={journal.name}
             key={journalId}
             journalId={journalId}
             onSettingCurrentJournal={props.onSettingCurrentJournal}
-            entries={journal.entries}            
+            entries={journal.entries}
           />;
         })}
       </div>

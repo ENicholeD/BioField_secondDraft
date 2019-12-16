@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import EntryList from './EntryList';
 import { v4 } from 'uuid';
 import Moment from 'moment';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 function JournalDetails(props) {
   let _entry = null;
 
   function addNewEntry(event) {
     event.preventDefault();
-    props.onAddingNewEntry({name: _entry.value, id: v4(), journalId: props.journalList[props.currentJournal].journalId, dateTimeString: new Moment()});
+    props.onAddingNewEntry({ name: _entry.value, id: v4(), journalId: props.journalList[props.currentJournal].journalId, dateTimeString: new Moment() });
     _entry.value = '';
   }
 
@@ -30,7 +30,7 @@ function JournalDetails(props) {
     color: '#0f2c3e'
   };
 
-  if(props.currentJournal){
+  if (props.currentJournal) {
     let journal = props.journalList[props.currentJournal];
     return (
       <div>

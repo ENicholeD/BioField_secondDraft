@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 
 function Journal(props) {
 
-  function seeJournalDetails()
-  {
+  function seeJournalDetails() {
     let journalId = props.journalId;
-    console.log('JOURNAL ID: ', journalId);
     props.onSettingCurrentJournal(journalId);
   }
 
