@@ -56,9 +56,9 @@ namespace BioField.Controllers
         [HttpPost]
         public ActionResult Edit(JournalController journal)
         {
-                _db.Entry(journal).State = EntityState.Modified;
-                _db.SaveChanges();
-                return RedirectToAction("Index");
+            _db.Entry(journal).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
         [HttpGet("/delete/{id}")]
         public ActionResult Delete(int id)

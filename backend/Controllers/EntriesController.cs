@@ -42,7 +42,7 @@ namespace BioField.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-        
+
         [HttpGet("/entry/info/{id}")]
         public ActionResult Info(int id)
         {

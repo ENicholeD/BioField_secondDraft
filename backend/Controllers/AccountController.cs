@@ -18,7 +18,7 @@ namespace BioField.Controllers
         private readonly BioFieldContext _db;
         private readonly IUserService _userService;
 
-         public AccountController(IUserService userService, BioFieldContext db)
+        public AccountController(IUserService userService, BioFieldContext db)
         {
             _userService = userService;
             _db = db;
@@ -29,7 +29,7 @@ namespace BioField.Controllers
         {
             var user = _userService.Authenticate(userLoggingIn.Username, userLoggingIn.Password);
             if (user == null)
-            return BadRequest(new { message = "Username or password is incorrect" });
+                return BadRequest(new { message = "Username or password is incorrect" });
             return Ok(user);
         }
 
@@ -43,6 +43,6 @@ namespace BioField.Controllers
             _db.ApplicationUser.Add(newUser);
             _db.SaveChanges();
         }
-        
+
     }
 }

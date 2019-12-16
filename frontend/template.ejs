@@ -4,14 +4,23 @@
 <head>
     <meta charset="utf-8">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 </head>
 
-<body style="background-color: rgb(228, 226, 209)">
+<body style="background-color: rgb(214, 208, 172)">
     <% if (htmlWebpackPlugin.options.appMountId) { %>
     <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
     <% } %>
+
+    <footer style="text-align: center">
+        <hr>
+        <a href="https://github.com/MagpieMortician/BioField_secondDraft"><img
+                src="https://image.flaticon.com/icons/png/512/25/25231.png" style="width: 25px"></a>
+                <a href="https://www.linkedin.com/in/erin-deuel/"><img src="https://image.flaticon.com/icons/png/512/61/61109.png" style="width: 25px"></a>
+                <a href="https://twitter.com/WraithsB"><img src="https://image.flaticon.com/icons/png/512/23/23931.png"
+                        style="width: 25px"> </a>
+
+    </footer>
 </body>
 
 </html>

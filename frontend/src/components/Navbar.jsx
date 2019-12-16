@@ -17,12 +17,13 @@ function Navbar(props) {
   }
 
   var navStyle = {
-    backgroundColor: '#747d5e',
+    backgroundColor: ' 	#AAA561',
     backgroundImage: 'url(' + 'https://www.transparenttextures.com/patterns/tree-bark.png' + ')',
     padding: '20px',
     marginLeft: '1%',
     marginRight: '1%',
-    borderRadius: '10px'
+    borderRadius: '10px',
+    boxShadow: '5px 5px 5px tan'
   };
   var marginLeftStyle = {
     marginLeft: '25px',
@@ -31,7 +32,7 @@ function Navbar(props) {
     fontFamily: 'Homemade Apple, cursive',
     fontSize: '50px',
     paddingTop: '20px',
-    textDecoration: 'none'
+    textDecoration: 'none',
   };
   var floatingRight = {
     textAlign: 'right',
