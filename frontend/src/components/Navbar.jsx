@@ -13,7 +13,7 @@ function Navbar(props) {
   let signInOut = <Link to='/sign-in'>Sign In</Link>;
 
   if (props.currentUser) {
-    signInOut = <Link onClick={clickLogout} to='/login'>Sign Out</Link>;
+    signInOut = <Link onClick={clickLogout} to='/sign-in'>Sign Out</Link>;
   }
 
   var navStyle = {

@@ -37,12 +37,6 @@ function JournalDetails(props) {
         <h1 style={headerStyle}>{journal.name}</h1>
         <EntryList entryList={journal.entries} />
         <form onSubmit={addNewEntry}>
-          <style jsx>{`
-            .input-field input[type=text]:focus {
-              border-bottom: 1px solid #0f2c3e;
-              box-shadow: 0 1px 0 0 #0f2c3e;
-            }
-        `}</style>
           <div className='input-field'>
             <input
               id='entry'

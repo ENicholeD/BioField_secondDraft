@@ -8,6 +8,7 @@ function CreateAcctPage(props) {
 
   function handleCreateAcct(event) {
     event.preventDefault();
+    console.log(event)
     props.onCreateAcct({ Username: _username.value, Password: _password.value });
     _username = '';
     _password = '';

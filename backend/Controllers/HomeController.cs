@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace BioField.Controllers
 {
+    [Route("[controller]")]
     public class HomeController : Controller
     {
+        [HttpGet("[action]")]
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpPost("[action]")]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

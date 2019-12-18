@@ -25,12 +25,6 @@ function LoginPage(props) {
   return (
     <div>
       <form onSubmit={handleLogin}>
-        <style jsx>{`
-            .input-field input:focus {
-              border-bottom: 1px solid #0f2c3e;
-              box-shadow: 0 1px 0 0 #0f2c3e;
-            }
-        `}</style>
         <div style={loginBtnParent} className='input-field'>
           <input
             type='text'

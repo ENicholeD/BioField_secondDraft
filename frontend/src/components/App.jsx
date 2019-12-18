@@ -31,6 +31,7 @@ class App extends React.Component {
     }
 
     handleCreateAcct(newUser) {
+        console.log(newUser);
         this.backendHelper.backendPostNewUser(newUser);
     }
 
@@ -44,7 +45,7 @@ class App extends React.Component {
         }).then(() => { this.getJournalList() });
     }
     getJournalList() {
-        let dataPromise = this.apiHelper.backendGetUserJournals(this.state.token);
+        let dataPromise = this.backendHelper.backendGetUserJournals(this.state.token);
         dataPromise.then((response) => {
             let parsedResponse = JSON.parse(response);
             console.log('JSON RESPONSE (getJournalList): ', parsedResponse);
@@ -102,7 +103,6 @@ class App extends React.Component {
         this.setState({ token: null });
     }
     render() {
-        console.log('APP STATE: ', this.state);
         return (
             <div>
                 <Navbar
