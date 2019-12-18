@@ -24,8 +24,10 @@ export default class BackendHelper {
             request.onload = function() {
             if (this.status === 200) {
                 resolve(request.response);
+                console.log("login successful");
             } else {
                 reject(Error(request.statusText));
+                console.log("login failed");
             }
         };
         request.send(body);
