@@ -51,14 +51,13 @@ export default class BackendHelper {
           request.send();
         });
     }
-    backendPostNewJournal(newJournal, token) {
+    backendPostNewJournal(newJournal) {
         return new Promise(function(resolve, reject) {
           let url = 'http://localhost:5000/Journal/Create';
           let request = new XMLHttpRequest();
           let body = JSON.stringify(newJournal);
           request.open('POST', url, true);
           request.setRequestHeader('Content-Type', 'application/JSON');
-          request.setRequestHeader('Authorization', 'Bearer ' + token);
           request.onload = function () {
             if (this.status === 200) {
               resolve(request.response);

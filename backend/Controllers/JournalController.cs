@@ -23,11 +23,12 @@ namespace BioField.Controllers
             return model;
         }
         [HttpPost("[action]")]
-        public ActionResult Create([FromBody] Journals journal)
+        public void Create([FromBody] Journals journal)
         {
+            Console.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+            Console.WriteLine(journal);
             _db.Journals.Add(journal);
             _db.SaveChanges();
-            return RedirectToAction("Index");
         }
         [HttpGet("[action]")]
         public ActionResult Info(int id)
@@ -40,11 +41,10 @@ namespace BioField.Controllers
         }
 
         [HttpPost("[action]")]
-        public ActionResult Edit(JournalController journal)
+        public void Edit(JournalController journal)
         {
             _db.Entry(journal).State = EntityState.Modified;
             _db.SaveChanges();
-            return RedirectToAction("Index");
         }
         [HttpPost("[action]")]
         public void DeleteConfirmed(int id)

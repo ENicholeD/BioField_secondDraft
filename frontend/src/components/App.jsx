@@ -64,15 +64,13 @@ class App extends React.Component {
     }
 
     handleAddingNewJournal(newJournal) {
-        let addJournalPromise = this.backendHelper.backendPostNewJournal(newJournal, this.state.token);
-        addJournalPromise.then((response) => {
-            newJournal.journalId = JSON.parse(response);
+        let addJournalPromise = this.backendHelper.backendPostNewJournal(newJournal);
+        console.log(addJournalPromise);
             let newJournalId = v4();
             let newMasterJournalList = Object.assign({}, this.state.masterJournalList, {
                 [newJournalId]: newJournal
             });
             this.setState({ masterJournalList: newMasterJournalList });
-        });
     }
 
     handleAddingNewEntry(newEntry) {

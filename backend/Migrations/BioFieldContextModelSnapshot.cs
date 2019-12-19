@@ -14,7 +14,7 @@ namespace BioField.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
             modelBuilder.Entity("BioField.Models.ApplicationUser", b =>
                 {
@@ -73,11 +73,11 @@ namespace BioField.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("UserId");
+                    b.Property<int?>("UserApplicationUserId");
 
                     b.HasKey("JournalsId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserApplicationUserId");
 
                     b.ToTable("Journals");
                 });
@@ -98,8 +98,7 @@ namespace BioField.Migrations
                 {
                     b.HasOne("BioField.Models.ApplicationUser", "User")
                         .WithMany("UserJournals")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("UserApplicationUserId");
                 });
 #pragma warning restore 612, 618
         }

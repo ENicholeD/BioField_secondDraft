@@ -10,7 +10,6 @@ namespace BioField.Models
         }
 
         public int JournalsId { get; set; }
-        public int UserId { get; set; }
         public string Name { get; set; }
         public virtual ApplicationUser User { get; set; }
         public virtual ICollection<Entries> Entries { get; set; }

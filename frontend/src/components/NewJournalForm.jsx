@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function NewJournalForm() {
+function NewJournalForm(props) {
     let _name = null;
 
     function handleAddingNewJournal(event) {
         event.preventDefault();
+        props.onNewJournalCreation({ Name: _name.value });
         console.log(_name.value);
-        _name.value = '';
+        _name = '';
     }
         var btnParent = {
             textAlign: 'center',
